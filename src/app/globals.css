@@ -8,6 +8,7 @@
   --grey: #171717;
   --blue: #1e6f9f;
   --purple: #6366f1;
+  --light-grey: #262626;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -73,4 +74,8 @@ header {
 
 .round input[type='checkbox']:checked + label:after {
   opacity: 1;
+}
+
+.card {
+  background-color: var(--light-grey);
 }

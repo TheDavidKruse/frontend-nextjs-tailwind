@@ -1,14 +1,23 @@
+/* 
+    Checkbox donated by
+    https://codepen.io/AllThingsSmitty/pen/WjZVjo
+*/
+
+import React from 'react';
+
 interface CheckboxProps {
-  onClick: Function;
-  active: boolean;
+  onClick?: Function;
+  active?: boolean;
+  children?: React.ReactNode;
 }
 
 export default function Checkbox({
   onClick = () => {},
-  active,
+  active = false,
+  children,
 }: CheckboxProps) {
   return (
-    <div className="round">
+    <div className="flex flex-row round">
       <input
         type="checkbox"
         id="checkbox"
@@ -17,7 +26,8 @@ export default function Checkbox({
         onClick={(e) => onClick(e)}
         style={{ width: '32px', height: '32px', borderRadius: '32px' }}
       />
-      <label htmlFor="checkbox"></label>
+      <label htmlFor="checkbox" className="flex"></label>
+      <div>{children}</div>
     </div>
   );
 }
